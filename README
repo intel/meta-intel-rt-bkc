@@ -1,0 +1,48 @@
+Introduction
+============
+
+This meta layer is used to release ikt rt kernel config and kernel cmdline
+parameters. RT kernel config and cmdline parameters are in:
+recipes-kernel/linux/files/RT.cfg
+
+meta-intel-ikt-rt
+===================
+
+This README file contains information on building and booting
+meta-intel-ikt-rt BSP layers. Please see the corresponding
+sections below for details.
+
+
+Yocto Project Compatible
+========================
+
+The BSPs contained in this layer are compatible with the Yocto Project
+as per the requirements listed here:
+
+  https://www.yoctoproject.org/webform/yocto-project-compatible-registration
+
+
+Dependencies
+============
+
+This layer depends on:
+  URI: git://git.openembedded.org/openembedded-core
+  layers: meta
+  branch: zeus
+
+  URI: git://git.yoctoproject.org/meta-intel
+  layers: intel
+  branch: zeus
+
+How to build Yocto image with intel iotg rt kernel
+==================================================
+
+1. git clone -b zeus git://git.yoctoproject.org/poky.git yocto_project
+2. cd yocto_project
+3. git clone -b zeus git://git.yoctoproject.org/meta-intel
+4. git clone -b 5.4/yocto https://github.com/intel/meta-intel-rt-bkc.git meta-intel-ikt-rt
+5. source ./oe-init-build-env
+6. (In yocto_project/build folder) bitbake-layers add-layer ../meta-intel
+7. bitbake-layers add-layer ../meta-intel-ikt-rt
+8. echo "MACHINE = \"intel-corei7-64\"" >> conf/auto.conf
+9. bitbake core-image-sato

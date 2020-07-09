@@ -1,0 +1,18 @@
+This file contains a list of BSP maintainers for the BSPs contained in
+the meta-intel-iotg-rt repository.
+
+The purpose of this file is to provide contact information for specific
+BSPs and other code contained in meta-intel-iotg-rt. This ensures that
+your question or patch will be addressed by the appropriate person.
+
+Descriptions of section entries:
+
+	M: Mail patches to: FullName <address@domain>
+
+Please keep this list in alphabetical order.
+
+Maintainers List (try to look for most precise areas first)
+
+	-----------------------------------
+M:	Junxiao Chang <junxiao.chang@intel.com>
+M:	Hao Li <hao3.li@intel.com>
