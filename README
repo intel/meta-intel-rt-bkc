@@ -28,16 +28,16 @@ Dependencies
 This layer depends on:
   URI: git://git.openembedded.org/openembedded-core
   layers: meta
-  branch: zeus
+  branch: dunfell
 
   URI: git://git.yoctoproject.org/meta-intel
   layers: intel
-  branch: zeus
+  branch: dunfell
 
 How to build Yocto image with intel iotg rt kernel
 ==================================================
 
-1. git clone -b zeus git://git.yoctoproject.org/poky.git yocto_project
+1. git clone -b dunfell git://git.yoctoproject.org/poky.git yocto_project
 2. cd yocto_project
 3. git clone -b zeus git://git.yoctoproject.org/meta-intel
 4. git clone -b 5.4/yocto https://github.com/intel/meta-intel-rt-bkc.git meta-intel-ikt-rt
@@ -45,4 +45,4 @@ How to build Yocto image with intel iotg rt kernel
 6. (In yocto_project/build folder) bitbake-layers add-layer ../meta-intel
 7. bitbake-layers add-layer ../meta-intel-ikt-rt
 8. echo "MACHINE = \"intel-corei7-64\"" >> conf/auto.conf
-9. bitbake core-image-sato
+9. bitbake core-image-sato (or core-image-minimal)
