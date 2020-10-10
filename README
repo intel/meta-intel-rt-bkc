@@ -39,10 +39,12 @@ How to build Yocto image with intel iotg rt kernel
 
 1. git clone -b dunfell git://git.yoctoproject.org/poky.git yocto_project
 2. cd yocto_project
-3. git clone -b zeus git://git.yoctoproject.org/meta-intel
-4. git clone -b 5.4/yocto https://github.com/intel/meta-intel-rt-bkc.git meta-intel-ikt-rt
-5. source ./oe-init-build-env
-6. (In yocto_project/build folder) bitbake-layers add-layer ../meta-intel
-7. bitbake-layers add-layer ../meta-intel-ikt-rt
-8. echo "MACHINE = \"intel-corei7-64\"" >> conf/auto.conf
-9. bitbake core-image-sato (or core-image-minimal)
+3. git clone -b dunfell git://git.yoctoproject.org/meta-intel
+4. git clone -b dunfell git://git.openembedded.org/meta-openembedded
+5. git clone -b 5.4/yocto https://github.com/intel/meta-intel-rt-bkc.git meta-intel-ikt-rt
+6. source ./oe-init-build-env
+7. (In yocto_project/build folder) bitbake-layers add-layer ../meta-intel
+8. bitbake-layers add-layer ../meta-openembedded/meta-oe/
+9. bitbake-layers add-layer ../meta-intel-ikt-rt
+10. echo "MACHINE = \"intel-corei7-64\"" >> conf/auto.conf
+11. bitbake core-image-sato (or core-image-minimal)
