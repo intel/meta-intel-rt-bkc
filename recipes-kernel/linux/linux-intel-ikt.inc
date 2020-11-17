@@ -15,16 +15,13 @@ KERNEL_CONFIG_URI ?= " \
 DEPENDS += "openssl-native util-linux-native"
 DEPENDS += "${@bb.utils.contains('ARCH', 'x86', 'elfutils-native', '', d)}"
 
-KBRANCH = "5.4/preempt-rt"
-SRC_URI = "git://github.com/intel/linux-intel-lts.git;name=machine;branch=${KBRANCH};protocol=https"
+SRC_URI = "git://github.com/intel/linux-intel-lts.git;name=machine;branch=${KBRANCH};tag=${K_TAG};protocol=https"
 
 SRC_URI_append = " ${KERNEL_CONFIG_URI}"
 #
 # Don't go to the premirrors since they won't have the source, nor should
 # we leak any internal branch or tag names.
 PREMIRRORS = ""
-
-SRCREV_machine ?= "${KBRANCH}"
 
 LINUX_VERSION_EXTENSION = "-intel-rt"
 # Set the sanity skip flag, but also set a default version so

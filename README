@@ -47,4 +47,5 @@ How to build Yocto image with intel iotg rt kernel
 8. bitbake-layers add-layer ../meta-openembedded/meta-oe/
 9. bitbake-layers add-layer ../meta-intel-ikt-rt
 10. echo "MACHINE = \"intel-corei7-64\"" >> conf/auto.conf
-11. bitbake core-image-sato (or core-image-minimal)
+11. (optional) echo "K_TAG = "<tag to be built>" >> conf/local.conf (example: echo "K_TAG = \"lts-v5.4.70-rt40-preempt-rt-201026T005400Z\"" >> conf/local.conf)
+12. bitbake core-image-sato (or core-image-minimal)
