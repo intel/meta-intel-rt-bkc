@@ -1,9 +1,9 @@
 require recipes-kernel/linux/linux-yocto.inc
 
-LINUX_VERSION ?= "5.4"
 OVERRIDES_append = ":kernelversion-${@'.'.join((d.getVar('LINUX_VERSION') or '').split('.')[:2])}"
 
 LIC_FILES_CHKSUM_kernelversion-5.4 = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
+LIC_FILES_CHKSUM_kernelversion-5.9 = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
 
 # FILESEXTRAPATHS_prepend := "${THISDIR}/linux-intel-dev/bsp/${BSP_SUBTYPE}:"
 
@@ -15,7 +15,7 @@ KERNEL_CONFIG_URI ?= " \
 DEPENDS += "openssl-native util-linux-native"
 DEPENDS += "${@bb.utils.contains('ARCH', 'x86', 'elfutils-native', '', d)}"
 
-SRC_URI = "git://github.com/intel/linux-intel-lts.git;name=machine;branch=${KBRANCH};tag=${K_TAG};protocol=https"
+SRC_URI = "${K_REPO};name=machine;branch=${K_BRANCH};tag=${K_TAG};protocol=${K_PROTOCOL}"
 
 SRC_URI_append = " ${KERNEL_CONFIG_URI}"
 #
