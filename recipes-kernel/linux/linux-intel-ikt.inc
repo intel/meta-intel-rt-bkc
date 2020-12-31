@@ -4,6 +4,7 @@ OVERRIDES_append = ":kernelversion-${@'.'.join((d.getVar('LINUX_VERSION') or '')
 
 LIC_FILES_CHKSUM_kernelversion-5.4 = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
 LIC_FILES_CHKSUM_kernelversion-5.9 = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
+LIC_FILES_CHKSUM_kernelversion-5.10 = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
 
 # FILESEXTRAPATHS_prepend := "${THISDIR}/linux-intel-dev/bsp/${BSP_SUBTYPE}:"
 
